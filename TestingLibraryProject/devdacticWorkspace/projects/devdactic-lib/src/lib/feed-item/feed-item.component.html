@@ -1,0 +1,25 @@
+<ion-grid class="ion-no-padding">
+  <ion-row>
+    <ion-col [ngStyle]='{"background-image": backgroundImage}' class="background-titleImage" size="4.5">
+    </ion-col>
+    <ion-col class="p-s" size="7.5">
+      <ion-row>
+        <ion-text class="feed-message">{{feedItem?.messageTypeText}}</ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text class="pb-05 text-title">{{feedItem?.titleText}}</ion-text>
+      </ion-row>
+      <ion-row>
+        <ion-text class="pb-05 text-body">{{feedItem?.subtitleFeedText | feedTemplate:
+          feedItem }}
+        </ion-text>
+      </ion-row>
+
+      <ion-buttons *ngIf="!!feedItem?.linkText">
+        <ion-button color="primary" class="feed-item" (click)="openFeedLink(feedItem)">
+          {{feedItem?.linkText | uppercase }}
+        </ion-button>
+      </ion-buttons>
+    </ion-col>
+  </ion-row>
+</ion-grid>

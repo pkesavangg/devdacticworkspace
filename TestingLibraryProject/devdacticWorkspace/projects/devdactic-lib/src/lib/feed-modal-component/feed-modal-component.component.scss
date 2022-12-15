@@ -1,0 +1,90 @@
+ %heightwidth100 {
+   height: 100%;
+   width: 100%;
+ }
+
+ :host {
+   @extend %heightwidth100;
+ }
+
+ .feed-background-image {
+   background-size: cover;
+   min-height: 15rem;
+   width: 100%;
+   background-repeat: no-repeat;
+   background-position: center center;
+ }
+
+ ion-card {
+   padding: 0 0 .5rem 0 !important;
+   margin: 0 !important;
+   @extend %heightwidth100;
+ }
+
+ img {
+   width: var(--feed-modal-close-icon-width);
+   height: .85rem;
+ }
+
+ .text-body {
+   font-size: 1rem !important;
+   color: var(--feed-text-body-color) !important;
+   font-weight: normal;
+ }
+
+ .responsive-img {
+   margin-top: 24px;
+   margin-left: 20px;
+ }
+
+ ion-row {
+   .text-subtitle {
+     padding: 1.5rem 1.25rem .25rem 1.25rem !important;
+   }
+ }
+
+ ion-card-header,
+ ion-card-content {
+   padding: 0 1.25rem !important;
+ }
+
+ .shop-now-button {
+   margin-bottom: 1rem;
+   width: fit-content;
+ }
+
+ ion-col.flex-center {
+   display: flex;
+   align-content: center;
+   justify-content: center;
+ }
+
+ ion-modal div {
+   height: 60% !important;
+ }
+
+ .alert-modal>ion-page {
+   height: 100% !important;
+   width: 100% !important;
+ }
+
+ @media only screen and (min-width: 768px) {
+   .fitness-image {
+     min-height: 20rem;
+   }
+ }
+
+
+ .text-center {
+   text-align: center !important;
+ }
+
+ ion-card-subtitle,
+ ion-card-content {
+   text-transform: none;
+ }
+
+ ion-col::first-letter,
+ ion-card-subtitle::first-letter {
+   text-transform: uppercase !important;
+ }

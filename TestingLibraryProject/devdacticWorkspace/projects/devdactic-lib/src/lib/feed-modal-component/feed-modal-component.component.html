@@ -1,0 +1,39 @@
+<ion-card>
+  <div class="feed-background-image" [ngStyle]='{"background-image":feedBackgroundImage}'>
+    <img alt="close" [src]="assetsUrl.icon.close" class="responsive-img toolbar-close" (click)="close()"
+      draggable="false" />
+  </div>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="text-subtitle text-center">
+        <ion-text color="dark"> {{ feedItem.messageTypeText}} </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card-header>
+    <ion-card-subtitle class="text-center">
+      <ion-text class="text-title">
+        {{feedItem.titleText}}
+      </ion-text>
+    </ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="text-center">
+          <ion-text class="text-body">
+            {{ feedItem.subtitleModalText | feedTemplate: feedItem }}
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!!feedItem.linkText">
+        <ion-col class="flex-center">
+          <ion-button (click)="openFeedTargetLink()" class="form-button shop-now-button text-center" shape="round"
+            expand="block" size="large">
+            {{ feedItem.linkText | uppercase }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

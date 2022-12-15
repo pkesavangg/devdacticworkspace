@@ -1,0 +1,33 @@
+.toggle-size {
+  width: 2.5625rem;
+  height: 1.375rem;
+}
+
+.responsive-img {
+  width: 100%;
+  height: auto;
+}
+
+.feed-setting-title {
+  font-size: 1.125rem !important;
+  font-weight: 600;
+  color: var(--feed-title-heading);
+}
+
+.feed-setting-text {
+  font-size: 1.125rem !important;
+  font-weight: normal;
+  color: var(--feed-title-heading);
+  margin: 16px 0px;
+}
+
+ion-toggle.toggle-checked::part(handle) {
+  background: var(--feed-toggle-setup-background) !important;
+}
+
+ion-toggle {
+  --background-checked: var(--feed-toggle-setup-background-checked) !important;
+  --handle-width: 1.125rem;
+  --handle-height: 1.125rem;
+  --handle-spacing: 0.063rem;
+}

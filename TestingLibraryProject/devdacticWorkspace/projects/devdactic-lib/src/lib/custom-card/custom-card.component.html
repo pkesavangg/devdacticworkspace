@@ -1,0 +1,44 @@
+<ion-content>
+
+  <ion-item lines="none" class="border-line">
+    <ion-buttons slot="start" class="m-0">
+      <!-- <img alt="logo" src='../../assets/gg_Black_Logo.svg' class="logo-size me-4" draggable="false" /> -->
+      <img alt="logo" src='assets/logos/gg_Black_Logo.svg' class="logo-size me-4" draggable="false" />
+    </ion-buttons>
+    <ion-text class="text-title"> {{ 'Deals on Goods'}}
+    </ion-text>
+    <ion-buttons slot="end">
+      <ion-button (click)="openFeedSettings()">
+        <!-- <img alt="logo" src='../../../assets/gg_Black_Logo.svg' class="logo-size me-2" draggable="false" /> -->
+        <img alt="logo" src='assets/img/Settings-blue.svg' class="logo-size me-4" draggable="false" />
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-grid class="no-entries-message" *ngIf=" !true; else entry">
+    <ion-row class="ion-justify-content-center ">
+      <ion-text class="text-medium feed-titles">{{
+        'Looks like you are offline...'}}</ion-text>
+    </ion-row>
+    <ion-row class="ion-justify-content-center  ion-text-center">
+      <ion-text class="text-body">{{'Check back when connected'}}
+      </ion-text>
+    </ion-row>
+  </ion-grid>
+  <ng-template #entry>
+    <ion-list *ngIf="feeds.length > 0; else noEntry" class="ion-no-padding" else="#noEntry">
+      <dev-feed-item *ngFor="let feedItem of feeds" class="ion-no-padding feed-items" [feedItem]="feedItem">
+      </dev-feed-item>
+    </ion-list>
+  </ng-template>
+  <ng-template #noEntry>
+    <ion-grid class="no-entries-message">
+      <ion-row class="ion-justify-content-center ">
+        <ion-text class="text-medium feed-titles">{{ 'Dry on Deals...for Now'}}</ion-text>
+      </ion-row>
+      <ion-row class="ion-justify-content-center  ion-text-center">
+        <ion-text class="text-body">{{'check back soon'}}
+        </ion-text>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+</ion-content>

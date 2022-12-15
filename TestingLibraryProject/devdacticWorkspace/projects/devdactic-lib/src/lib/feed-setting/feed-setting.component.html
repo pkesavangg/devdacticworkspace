@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-button appDebounceClick (click)="close()" size="small" fill="clear">
+        <img alt="close" src="assets/img/close.svg" class="responsive-img toolbar-close" draggable="false" />
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="feed-setting-title"> {{ 'Message Settings' }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item lines="full">
+    <ion-label class="feed-setting-text">{{'Pop-up Messages'}}</ion-label>
+    <ion-toggle [checked]="togglePopup" mode="md" class="toggle-size" (ionChange)="togglePopupValue($event)">
+    </ion-toggle>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="feed-setting-text">{{'Notification Badges'}}</ion-label>
+    <ion-toggle [checked]="toggleBadges" mode="md" class="toggle-size"
+      (ionChange)="toggleNotificationBadgeValue($event)">
+    </ion-toggle>
+  </ion-item>
+</ion-content>
